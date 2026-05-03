@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dev Portfolio | Desarrollador Web</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <span class="loader-bracket">{</span>
+        <span class="loader-initials">DEVELOPER</span>
+        <span class="loader-bracket">}</span>
+      </div>
+      <div class="loader-bar">
+        <div class="loader-fill" id="loaderFill"></div>
+      </div>
+      <p class="loader-text" id="loaderText">Inicializando...</p>
+    </div>
+  </div>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">{</span>
+        <span class="logo-name">DEVELOPER</span>
+        <span class="logo-bracket">}</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link" data-text="Sobre mí">Sobre mí</a></li>
+        <li><a href="#finanzas" class="nav-link" data-text="Finanzas">Finanzas</a></li>
+        <li><a href="#stepstyle" class="nav-link" data-text="StepStyle">StepStyle</a></li>
+        <li><a href="#quecafe" class="nav-link" data-text="+QueCafe">+QueCafe</a></li>
+        <li><a href="#contact" class="nav-cta">Contáctame</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <canvas id="particleCanvas"></canvas>
+    <div class="hero-grid"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="hero-content">
+      <div class="hero-badge reveal-up">
+        <span class="badge-dot"></span>
+        Disponible para proyectos
+      </div>
+      <h1 class="hero-title reveal-up" style="--delay:0.1s">
+        <span class="title-line">Hola, soy</span>
+        <span class="title-name" id="heroName">Jeffrey Suarez</span>
+      </h1>
+      <div class="hero-subtitle reveal-up" style="--delay:0.2s">
+        <span class="subtitle-static">Soy </span>
+        <span class="typing-wrapper">
+          <span class="typing-text" id="typingText"></span>
+          <span class="cursor-blink">|</span>
+        </span>
+      </div>
+      <p class="hero-description reveal-up" style="--delay:0.3s">
+        Construyo experiencias digitales únicas, funcionales y visualmente impactantes.<br>
+        Del diseño al despliegue, cada detalle importa.
+      </p>
+      <div class="hero-actions reveal-up" style="--delay:0.4s">
+        <a href="#about" class="btn btn-primary">
+          <span>Ver mi trabajo</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost">Contáctame</a>
+      </div>
+      <div class="hero-stats reveal-up" style="--delay:0.5s">
+        <div class="stat">
+          <span class="stat-number counter" data-target="3">0</span>
+          <span class="stat-label">Proyectos</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number counter" data-target="10">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Tecnologías</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number counter" data-target="100">0</span><span class="stat-suffix">%</span>
+          <span class="stat-label">Dedicación</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- SOBRE MÍ -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">01 — Sobre mí</span>
+        <h2 class="section-title">Quién soy <span class="accent">&</span> qué hago</h2>
+      </div>
+      <div class="about-intro reveal-up">
+        <div class="about-avatar">
+          <div class="avatar-placeholder">
+            <svg viewBox="0 0 100 100" fill="none">
+              <circle cx="50" cy="35" r="22" stroke="var(--accent)" stroke-width="2" />
+              <path d="M10 95c0-22 18-40 40-40s40 18 40 40" stroke="var(--accent)" stroke-width="2" />
+            </svg>
+          </div>
+          <div class="avatar-ring"></div>
+          <div class="avatar-badge"><span>⚡</span></div>
+        </div>
+        <div class="about-bio">
+          <h3>Desarrollador Web Full Stack</h3>
+          <p>Apasionado por crear soluciones web que no solo funcionan, sino que <strong>impresionan</strong>. Me
+            especializo en transformar ideas complejas en experiencias digitales intuitivas y elegantes.</p>
+          <p>Cuando no estoy escribiendo código, estoy explorando nuevas tecnologías, diseñando interfaces o aprendiendo
+            algo nuevo cada día.</p>
+        </div>
+      </div>
+      <div class="about-grid">
+        <div class="about-card reveal-up" style="--delay:0s">
+          <div class="card-icon">🛠</div>
+          <h4>Tecnologías</h4>
+          <div class="tech-grid">
+            <span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span>
+            <span class="tech-tag">PHP</span><span class="tech-tag">Python</span>
+            <span class="tech-tag">JavaScript</span><span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">MySQL</span><span class="tech-tag">GitHub</span>
+            <span class="tech-tag">Vue.js</span>
+          </div>
+        </div>
+        <div class="about-card reveal-up" style="--delay:0.1s">
+          <div class="card-icon">💼</div>
+          <h4>Experiencia</h4>
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="tl-year">2024</span>
+              <div class="tl-content"><strong>Desarrollador Tecnico</strong>
+                <p>Complete mis estudios y obtuve mi titulo como tecnico de software</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="tl-year">2026</span>
+              <div class="tl-content"><strong>Tecnologo</strong>
+                <p>Estoy en proceso de titularme como tecnologo en desarrollo de software</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-card reveal-up" style="--delay:0.2s">
+          <div class="card-icon">📊</div>
+          <h4>Habilidades</h4>
+          <div class="skills-bars">
+            <div class="skill-bar">
+              <div class="skill-info"><span>Frontend</span><span>80%</span></div>
+              <div class="skill-track">
+                <div class="skill-fill" data-width="80"></div>
+              </div>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-info"><span>Backend</span><span>90%</span></div>
+              <div class="skill-track">
+                <div class="skill-fill" data-width="90"></div>
+              </div>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-info"><span>UI/UX</span><span>95%</span></div>
+              <div class="skill-track">
+                <div class="skill-fill" data-width="95"></div>
+              </div>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-info"><span>Bases de datos</span><span>85%</span></div>
+              <div class="skill-track">
+                <div class="skill-fill" data-width="85"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-card reveal-up" style="--delay:0.3s">
+          <div class="card-icon">🎓</div>
+          <h4>Educación</h4>
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="tl-year">2024</span>
+              <div class="tl-content"><strong>Tecnico en Desarrollo de Software</strong>
+                <p>I.E Alfonso lopez pumarejo</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="tl-year">2026</span>
+              <div class="tl-content"><strong>Tecnologo en Desarrollo de Software</strong>
+                <p>Sena</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-card reveal-up" style="--delay:0.5s">
+          <div class="card-icon">🌍</div>
+          <h4>Idiomas & Objetivos</h4>
+          <div class="lang-list">
+            <div class="lang-item">
+              <span>Español</span>
+              <div class="lang-dots">
+                <span class="dot active"></span><span class="dot active"></span>
+                <span class="dot active"></span><span class="dot active"></span><span class="dot active"></span>
+              </div>
+            </div>
+            <div class="lang-item">
+              <span>Inglés</span>
+              <div class="lang-dots">
+                <span class="dot active"></span><span class="dot active"></span>
+                <span class="dot active"></span><span class="dot"></span><span class="dot"></span>
+              </div>
+            </div>
+          </div>
+          <p class="objectives-text">Mi objetivo: construir productos digitales de impacto global, colaborando con
+            equipos multidisciplinarios innovadores.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTO: FINANZAS -->
+  <section class="section project-section" id="finanzas">
+    <div class="project-bg-number">01</div>
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">02 — Proyecto</span>
+        <h2 class="section-title">Finanzas <span class="accent">App</span></h2>
+      </div>
+      <div class="project-layout">
+        <div class="project-info reveal-left">
+          <p class="project-desc">Aplicación web de gestión financiera personal que permite llevar control de ingresos,
+            egresos, presupuestos y visualizar estadísticas en tiempo real con gráficos interactivos.</p>
+          <div class="project-meta">
+            <div class="meta-block">
+              <h5>🚀 Tecnologías</h5>
+              <div class="tech-grid compact">
+                <span class="tech-tag">HTML</span><span class="tech-tag">CSS</span>
+                <span class="tech-tag">PHP</span><span class="tech-tag">MySQL</span>
+              </div>
+            </div>
+            <div class="meta-block">
+              <h5>✨ Características</h5>
+              <ul class="feature-list">
+                <li>Dashboard con estadísticas en tiempo real</li>
+                <li>Categorización automática de gastos</li>
+                <li>Administrar movimientos</li>
+                <li>Consultas generales en base al movimiento</li>
+                <li>Interfaz de usuario intuitiva y registro unicos por usuarios</li>
+                <li>Historial de acciones</li>
+                <li>Informacion del usuario logueado</li>
+                <li>Registro de usuario a través de formulario y confirmacion de gmail</li>
+              </ul>
+            </div>
+            <div class="meta-block">
+              <h5>🎯 Problema resuelto</h5>
+              <p class="problem-text">Muchas personas pierden el control de sus finanzas por falta de herramientas
+                simples e intuitivas. Esta app centraliza toda la gestión financiera en un solo lugar visual y fácil de
+                usar.</p>
+            </div>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Jeffreysuarez23/finanzas" class="btn btn-ghost">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.28-.01-1.03-.01-2.02-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22 0 1.61-.01 2.9-.01 3.29 0 .32.22.7.83.58C20.57 21.8 24 17.31 24 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+        <div class="project-slider reveal-right">
+          <div class="slider-container" data-slider="finanzas">
+            <div class="slider-track" id="sliderFinanzas">
+              <div class="slide">
+                <div class="slide-mockup finance-mock">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./finanzas-img/1.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Resgitro de usuario</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./finanzas-img/2.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Login</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./finanzas-img/3.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Dashboard Principal</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./finanzas-img/4.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Mes seleccionado</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./finanzas-img/5.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Tablas de movimientos</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./finanzas-img/6.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Registro de Movimiento</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./finanzas-img/7.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Tabla de movimientos</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./finanzas-img/8.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Gestion de deudas</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-2">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./finanzas-img/9.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Graficos</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./finanzas-img/10.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Perfil del usuario</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./finanzas-img/11.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Historial de Movimientos</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./finanzas-img/12.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Consultas</p>
+              </div>
+              
+            </div>
+            <button class="slider-btn prev" data-target="sliderFinanzas">&#8249;</button>
+            <button class="slider-btn next" data-target="sliderFinanzas">&#8250;</button>
+            <div class="slider-dots" id="dotsFinanzas"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- PROYECTO: STEPSTYLE -->
+  <section class="section project-section alt-bg" id="stepstyle">
+    <div class="project-bg-number">02</div>
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">03 — Proyecto</span>
+        <h2 class="section-title">Step<span class="accent">Style</span></h2>
+      </div>
+      <div class="project-layout reverse">
+        <div class="project-slider reveal-left">
+          <div class="slider-container" data-slider="stepstyle">
+            <div class="slider-track" id="sliderStepstyle">
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./stepstyle-img/register.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Registro</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./stepstyle-img/login.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Login</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./stepstyle-img/1.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Inicio</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./stepstyle-img/2.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Nuestra historia</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./stepstyle-img/3.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Nuestros valores</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./stepstyle-img/4.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Mision y vision</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./stepstyle-img/5.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Nuestros equipo</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./stepstyle-img/6.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Tienda</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./stepstyle-img/7.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Carrito de compras</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./stepstyle-img/8.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Perfil</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./stepstyle-img/9.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Editar informacion</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./stepstyle-img/10.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Recuperar/eliminar cuenta</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./stepstyle-img/12.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">ADMIN crear usuarios</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./stepstyle-img/14.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">ADMIN crear productos</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./stepstyle-img/15.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">ADMIN gestionar productos</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./stepstyle-img/16.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">ADMIN gestionar contactos</p>
+              </div>
+            </div>
+            <button class="slider-btn prev" data-target="sliderStepstyle">&#8249;</button>
+            <button class="slider-btn next" data-target="sliderStepstyle">&#8250;</button>
+            <div class="slider-dots" id="dotsStepstyle"></div>
+          </div>
+        </div>
+        <div class="project-info reveal-right">
+          <p class="project-desc">Página web moderna dedicada a la venta de calzado de todo tipo para hombres, mujeres y niños. Ofrece una amplia variedad de estilos como deportivos, casuales, elegantes, botas y sandalias, combinando calidad, comodidad y las últimas tendencias. Cuenta con un diseño atractivo y fácil de navegar para brindar una experiencia de compra rápida y segura.</p>
+          <div class="project-meta">
+            <div class="meta-block">
+              <h5>🚀 Tecnologías</h5>
+              <div class="tech-grid compact">
+                <span class="tech-tag">HTML</span><span class="tech-tag">CSS</span>
+                <span class="tech-tag">PHP</span><span class="tech-tag">MySQL</span>
+              </div>
+            </div>
+            <div class="meta-block">
+              <h5>✨ Características</h5>
+              <ul class="feature-list">
+                <li>Interface intuitiva y responsive</li>
+                <li>Carrito de compras</li>
+                <li>Funciones de escalabilidad</li>
+                <li>Panel administrativo</li>
+                <li>Sistema enfocado en la edicion desde el dashboard</li>
+              </ul>
+            </div>
+            <div class="meta-block">
+              <h5>🎯 Problema resuelto</h5>
+              <p class="problem-text">Las tiendas físicas de calzado perdían ventas por ausencia digital. StepStyle
+                llevó el negocio al mundo online con una experiencia de compra fluida y profesional.</p>
+            </div>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Jeffreysuarez23/STEPSTYLE" class="btn btn-ghost">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.28-.01-1.03-.01-2.02-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22 0 1.61-.01 2.9-.01 3.29 0 .32.22.7.83.58C20.57 21.8 24 17.31 24 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTO: +QUECAFE -->
+  <section class="section project-section" id="quecafe">
+    <div class="project-bg-number">03</div>
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">04 &mdash; Proyecto</span>
+        <h2 class="section-title">+<span class="accent">Que</span>Cafe</h2>
+      </div>
+      <div class="project-layout">
+        <div class="project-info reveal-left">
+          <p class="project-desc">Plataforma web para cafeterias artesanales que combina menu digital interactivo,
+            facil adquisicion de productos y manejo de los mismos, y no mejor importante fidelizacion con nuestros clientes.</p>
+          <div class="project-meta">
+            <div class="meta-block">
+              <h5>Tecnologias</h5>
+              <div class="tech-grid compact">
+                <span class="tech-tag">HTML</span><span class="tech-tag">CSS</span>
+                <span class="tech-tag">PHP</span><span class="tech-tag">MySQL</span>
+              </div>
+            </div>
+            <div class="meta-block">
+              <h5>Caracteristicas</h5>
+              <ul class="feature-list">
+                <li>Menu digital con imagenes HD</li>
+                <li>Catalogo de productos</li>
+                <li>Sistema de pedidos online</li>
+                <li>Programa de puntos y recompensas</li>
+                <li>Dashboard 100% funcional para cualquier tipo de necesidad</li>
+                <li>Vista y interacciones rapidas y sencillas</li>
+              </ul>
+            </div>
+            <div class="meta-block">
+              <h5>Problema resuelto</h5>
+              <p class="problem-text">Las cafeterias artesanales carecian de presencia digital moderna. +QueCafe les dio
+                una solucion todo-en-uno que mejoro la experiencia del cliente y redujo tiempos de espera y adquisicion de productos muchos mas comodos para el cliente.</p>
+            </div>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Jeffreysuarez23/MASQUECAFE" class="btn btn-ghost">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.28-.01-1.03-.01-2.02-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22 0 1.61-.01 2.9-.01 3.29 0 .32.22.7.83.58C20.57 21.8 24 17.31 24 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+        <div class="project-slider reveal-right">
+          <div class="slider-container" data-slider="quecafe">
+            <div class="slider-track" id="sliderQuecafe">
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./masquecafe-img/1.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Registro</p>
+              </div>
+
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./masquecafe-img/2.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">login</p>
+              </div>
+
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./masquecafe-img/3.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Conocenos</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./masquecafe-img/4.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Historia y mision</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./masquecafe-img/5.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Nuestra compañia</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./masquecafe-img/6.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Nuestros productos</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./masquecafe-img/7.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Que opinas?</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./masquecafe-img/8.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Contactanos</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./masquecafe-img/9.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Adquiere nuestros productos</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./masquecafe-img/10.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Carrito de compras</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./masquecafe-img/11.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">ADMIN crear productos</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./masquecafe-img/12.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">ADMIN gestionar productos</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./masquecafe-img/13.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">ADMIN crear usuarios</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./masquecafe-img/14.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">ADMIN gestionar usuarios</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./masquecafe-img/15.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">ADMIN crear hoja de vida de trabajadores</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./masquecafe-img/16.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">ADMIN gestion hoja de vida de trabajadores</p>
+              </div>
+              <div class="slide">
+                <div class="slide-mockup finance-mock-3">
+                  <div class="mock-header"><span class="mock-dot red"></span><span class="mock-dot yellow"></span><span
+                      class="mock-dot green"></span></div>
+                  <div class="mock-body">
+                    <img src="./masquecafe-img/17.png" alt="">
+                  </div>
+                </div>
+                <p class="slide-caption">Opiniones de nuestros clientes</p>
+              </div>
+            </div>
+            <button class="slider-btn prev" data-target="sliderQuecafe">&#8249;</button>
+            <button class="slider-btn next" data-target="sliderQuecafe">&#8250;</button>
+            <div class="slider-dots" id="dotsQuecafe"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">05 &mdash; Contacto</span>
+        <h2 class="section-title">Trabajemos <span class="accent">juntos</span></h2>
+        <p class="section-subtitle">Tienes un proyecto en mente? Escribeme directamente, estoy disponible.</p>
+      </div>
+      <div class="contact-cards-center reveal-up" style="--delay:0.1s">
+        <a href="mailto:tu@email.com" class="contact-card-big">
+          <div class="ccb-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="4" width="20" height="16" rx="3" />
+              <path d="M2 7l10 7 10-7" />
+            </svg>
+          </div>
+          <div class="ccb-body">
+            <span class="ccb-label">Correo electronico</span>
+            <span class="ccb-value">jeffrey232008suarez@gmail.com</span>
+          </div>
+          <div class="ccb-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </div>
+        </a>
+        <a href="https://wa.me/573000000000" target="_blank" rel="noopener" class="contact-card-big">
+          <div class="ccb-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.121 1.532 5.85L.057 23.428a.75.75 0 00.916.916l5.578-1.475A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.663-.51-5.188-1.4l-.372-.22-3.862 1.021 1.021-3.737-.242-.386A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+            </svg>
+          </div>
+          <div class="ccb-body">
+            <span class="ccb-label">WhatsApp / Telefono</span>
+            <span class="ccb-value">+57 323 333 8603</span>
+          </div>
+          <div class="ccb-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </div>
+        </a>
+        <a href="https://github.com/Jeffreysuarez23" target="_blank" rel="noopener" class="contact-card-big">
+          <div class="ccb-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.28-.01-1.03-.01-2.02-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22 0 1.61-.01 2.9-.01 3.29 0 .32.22.7.83.58C20.57 21.8 24 17.31 24 12c0-6.63-5.37-12-12-12z" />
+            </svg>
+          </div>
+          <div class="ccb-body">
+            <span class="ccb-label">GitHub</span>
+            <span class="ccb-value">github.com/Jeffreysuarez23</span>
+          </div>
+          <div class="ccb-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <span class="logo-bracket">{</span>
+          <span class="logo-name">DEVELOPER</span>
+          <span class="logo-bracket">}</span>
+        </div>
+        <p class="footer-copy">Disenado y construido con corazon &mdash; &copy; 2025</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <path d="M18 15l-6-6-6 6" />
+    </svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
